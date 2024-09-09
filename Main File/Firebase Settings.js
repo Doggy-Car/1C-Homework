@@ -8,11 +8,10 @@ alert("Start Connecting");
 const firebaseConfig = {
   apiKey: "${{ secrets.firebaseApiKey }}",
   authDomain: "one1c-student.firebaseapp.com",
-  databaseURL: "https://one1c-student-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "one1c-student",
   storageBucket: "one1c-student.appspot.com",
-  messagingSenderId: "23302822964",
-  appId: "1:23302822964:web:04565a9f9d05ee694c7e61",
+  messagingSenderId: "23302822964", // Confirm this in your Firebase console
+  appId: "1:23302822964:web:04565a9f9d05ee694c7e61", // Confirm this in your Firebase console
   measurementId: "G-05F997X5J0"
 };
 
@@ -37,6 +36,7 @@ setDoc(doc(sbCollection, 'NB'), {
 })
 .catch(error => {
   console.error("Error writing document: ", error);
+  alert("Error writing document. Please check the console for details.");
 });
 
 alert("Connection should be done. Please see console");
