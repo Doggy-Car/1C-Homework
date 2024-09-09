@@ -4,8 +4,15 @@ import { getAuth } from "firebase/auth";
 // TODO: Replace the following with your app's Firebase project configuration
 // See: https://firebase.google.com/docs/web/learn-more#config-object
 const firebaseConfig = {
-  // ...
+  apiKey: "AIzaSyDHJKgZiczPg6zzv7niF6XhQHPKStq0ZEU",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  databaseURL: "https://YOUR_DATABASE_NAME.firebaseio.com",
+  projectId: "one1c-student",
+  storageBucket: "YOUR_BUCKET.appspot.com",
+  messagingSenderId: "YOUR_SENDER_ID",
+  appId: "YOUR_APP_ID"
 };
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
