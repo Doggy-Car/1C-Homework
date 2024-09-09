@@ -6,7 +6,7 @@ import { getAuth } from "firebase/auth";
 const firebaseConfig = {
   apiKey: "AIzaSyDHJKgZiczPg6zzv7niF6XhQHPKStq0ZEU",
   authDomain: "one1c-student.firebaseapp.com",
-  databaseURL: "https://1C-Studemt.firebaseio.com",
+  databaseURL: "https://1C-Student.firebaseio.com",
   projectId: "one1c-student",
   storageBucket: "YOUR_BUCKET.appspot.com",
   messagingSenderId: "YOUR_SENDER_ID",
