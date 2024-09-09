@@ -21,3 +21,20 @@ const app = initializeApp(firebaseConfig);
 
 // Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
+
+// Initialize Firestore
+const db = firebase.firestore();
+
+// Get a reference to the SB collection
+const sbCollection = db.collection('SB');
+
+// Add a document to the SB collection
+sbCollection.doc('NB').set({
+  description: "This is a description of the NB document."
+})
+.then(() => {
+  console.log("Document written successfully!");
+})
+.catch(error => {
+  console.error("Error writing document: ", error);
+});
