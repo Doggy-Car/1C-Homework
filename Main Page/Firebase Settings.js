@@ -1,6 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
+alert("Start Connecting");
+
 // TODO: Replace the following with your app's Firebase project configuration
 // See: https://firebase.google.com/docs/web/learn-more#config-object
 const firebaseConfig = {
@@ -38,3 +40,5 @@ sbCollection.doc('NB').set({
 .catch(error => {
   console.error("Error writing document: ", error);
 });
+
+alert("Connection should be done. Please see console");
