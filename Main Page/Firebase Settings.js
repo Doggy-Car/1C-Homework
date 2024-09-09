@@ -4,7 +4,7 @@ import { getAuth } from "firebase/auth";
 // TODO: Replace the following with your app's Firebase project configuration
 // See: https://firebase.google.com/docs/web/learn-more#config-object
 const firebaseConfig = {
-  apiKey: "AIzaSyDHJKgZiczPg6zzv7niF6XhQHPKStq0ZEU",
+  apiKey: "${{ secrets.firebaseApiKey }}",
   authDomain: "one1c-student.firebaseapp.com",
   databaseURL: "https://one1c-student-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "one1c-student",
