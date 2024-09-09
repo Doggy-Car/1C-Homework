@@ -5,8 +5,8 @@ import { getAuth } from "firebase/auth";
 // See: https://firebase.google.com/docs/web/learn-more#config-object
 const firebaseConfig = {
   apiKey: "AIzaSyDHJKgZiczPg6zzv7niF6XhQHPKStq0ZEU",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  databaseURL: "https://YOUR_DATABASE_NAME.firebaseio.com",
+  authDomain: "one1c-student.firebaseapp.com",
+  databaseURL: "https://1C-Studemt.firebaseio.com",
   projectId: "one1c-student",
   storageBucket: "YOUR_BUCKET.appspot.com",
   messagingSenderId: "YOUR_SENDER_ID",
