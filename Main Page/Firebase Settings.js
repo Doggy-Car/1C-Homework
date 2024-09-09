@@ -6,11 +6,12 @@ import { getAuth } from "firebase/auth";
 const firebaseConfig = {
   apiKey: "AIzaSyDHJKgZiczPg6zzv7niF6XhQHPKStq0ZEU",
   authDomain: "one1c-student.firebaseapp.com",
-  databaseURL: "https://1C-Student.firebaseio.com",
+  databaseURL: "https://one1c-student-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "one1c-student",
-  storageBucket: "YOUR_BUCKET.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  storageBucket: "one1c-student.appspot.com",
+  messagingSenderId: "23302822964",
+  appId: "1:23302822964:web:04565a9f9d05ee694c7e61",
+  measurementId: "G-05F997X5J0"
 };
 
 
