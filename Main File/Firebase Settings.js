@@ -1,10 +1,10 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { getFirestore, collection, doc, setDoc } from "firebase/firestore";
 
 alert("Start Connecting");
 
 // TODO: Replace the following with your app's Firebase project configuration
-// See: https://firebase.google.com/docs/web/learn-more#config-object
 const firebaseConfig = {
   apiKey: "${{ secrets.firebaseApiKey }}",
   authDomain: "one1c-student.firebaseapp.com",
@@ -16,22 +16,20 @@ const firebaseConfig = {
   measurementId: "G-05F997X5J0"
 };
 
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
 
 // Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
 
 // Initialize Firestore
-const db = firebase.firestore();
+const db = getFirestore(app);
 
 // Get a reference to the SB collection
-const sbCollection = db.collection('SB');
+const sbCollection = collection(db, 'SB');
 
 // Add a document to the SB collection
-sbCollection.doc('NB').set({
+setDoc(doc(sbCollection, 'NB'), {
   description: "This is a description of the NB document."
 })
 .then(() => {
