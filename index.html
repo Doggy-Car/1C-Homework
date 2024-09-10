@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Realtime Database Example</title>
+  <title>Firebase Realtime Database Example</title>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
   <script>
-    // Initialize Firebase
+    // Replace with your Firebase configuration
     const firebaseConfig = {
       apiKey: "AIzaSyDHJKgZiczPg6zzv7niF6XhQHPKStq0ZEU",
       authDomain: "one1c-student.firebaseapp.com",
@@ -16,54 +16,26 @@
       appId: "1:23302822964:web:04565a9f9d05ee694c7e61",
       measurementId: "G-05F997X5J0"
     };
+
+    // Initialize Firebase
     const app = firebase.initializeApp(firebaseConfig);
     const database = firebase.database();
 
-    // Get a reference to the database
-    const messagesRef = database.ref('messages');
-
-    // Function to display messages
-    function displayMessages(messages) {
-      const messagesList = document.getElementById('messages-list');
-      messagesList.innerHTML = ''; // Clear previous messages
-
-      messages.forEach(message => {
-        const messageItem = document.createElement('li');
-        messageItem.textContent = message.val().text;
-        messagesList.appendChild(messageItem);
-      });
-    }
-
-    // Listen for changes in the database
-    messagesRef.on('value', (snapshot) => {
-      const messages = snapshot.val();
-      displayMessages(messages);
+    // Example: Read data from the database
+    database.ref('users/').on('value', (snapshot) => {
+      const users = snapshot.val();
+      console.log(users);
     });
 
-    // Send a new message
-    const sendMessageForm = document.getElementById('send-message-form');
-    sendMessageForm.addEventListener('submit', (event) => {
-      event.preventDefault(); // Prevent form submission
-
-      const messageInput = document.getElementById('message-input');
-      const messageText = messageInput.value;
-
-      // Add the message to the database
-      messagesRef.push({
-        text: messageText
-      });
-
-      messageInput.value = ''; // Clear the input field
-    });
+    // Example: Write data to the database
+    const user = {
+      name: 'John Doe',
+      age: 30
+    };
+    database.ref('users/user1').set(user);
   </script>
 </head>
 <body>
-  <h1>Realtime Database Chat</h1>
-  <ul id="messages-list"></ul>
-
-  <form id="send-message-form">
-    <input type="text" id="message-input" placeholder="Enter your message">
-    <button type="submit">Send</button>
-  </form>
+  <h1>Firebase Realtime Database Example</h1>
 </body>
 </html>
