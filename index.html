@@ -1,13 +1,63 @@
 <!DOCTYPE html>
-<html lang="cn-hk">
-  <head>
-    <title>1C Homework</title>
-    <meta charset="utf-8">
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
-  </head>
-  <body>
-    <h1>This is for 1C Students for Recording Homework.</h1>
-    <script src="Main File/Firebase Settings.js"></script>
-  </body>
+<html>
+<head>
+  <title>Realtime Database Example</title>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <script>
+    // Initialize Firebase
+    const firebaseConfig = {
+      // Your Firebase config goes here
+      // Get it from the Firebase Console
+    };
+    const app = firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
+
+    // Get a reference to the database
+    const messagesRef = database.ref('messages');
+
+    // Function to display messages
+    function displayMessages(messages) {
+      const messagesList = document.getElementById('messages-list');
+      messagesList.innerHTML = ''; // Clear previous messages
+
+      messages.forEach(message => {
+        const messageItem = document.createElement('li');
+        messageItem.textContent = message.val().text;
+        messagesList.appendChild(messageItem);
+      });
+    }
+
+    // Listen for changes in the database
+    messagesRef.on('value', (snapshot) => {
+      const messages = snapshot.val();
+      displayMessages(messages);
+    });
+
+    // Send a new message
+    const sendMessageForm = document.getElementById('send-message-form');
+    sendMessageForm.addEventListener('submit', (event) => {
+      event.preventDefault(); // Prevent form submission
+
+      const messageInput = document.getElementById('message-input');
+      const messageText = messageInput.value;
+
+      // Add the message to the database
+      messagesRef.push({
+        text: messageText
+      });
+
+      messageInput.value = ''; // Clear the input field
+    });
+  </script>
+</head>
+<body>
+  <h1>Realtime Database Chat</h1>
+  <ul id="messages-list"></ul>
+
+  <form id="send-message-form">
+    <input type="text" id="message-input" placeholder="Enter your message">
+    <button type="submit">Send</button>
+  </form>
+</body>
 </html>
