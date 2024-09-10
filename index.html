@@ -5,7 +5,14 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
   <script>
-    // Replace with your Firebase configuration
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "firebase/app";
+    import { getAnalytics } from "firebase/analytics";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
     const firebaseConfig = {
       apiKey: "AIzaSyDHJKgZiczPg6zzv7niF6XhQHPKStq0ZEU",
       authDomain: "one1c-student.firebaseapp.com",
@@ -13,10 +20,9 @@
       projectId: "one1c-student",
       storageBucket: "one1c-student.appspot.com",
       messagingSenderId: "23302822964",
-      appId: "1:23302822964:web:04565a9f9d05ee694c7e61",
-      measurementId: "G-05F997X5J0"
+      appId: "1:23302822964:web:84086f888074a9f14c7e61",
+      measurementId: "G-8ZTFB4YXWN"
     };
-
     // Initialize Firebase
     const app = firebase.initializeApp(firebaseConfig);
     const database = firebase.database();
